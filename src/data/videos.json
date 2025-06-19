@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Avengers Endgame",
+    "poster": "/images/avengers.jpg",
+    "category": "Trending",
+    "description": "Earth’s mightiest heroes..."
+  },
+  {
+    "id": 2,
+    "title": "Loki",
+    "poster": "/images/loki.jpg",
+    "category": "Trending",
+    "description": "A time-bending adventure..."
+  }
+]
