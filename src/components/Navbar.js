@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
@@ -21,18 +21,35 @@ const menuItems = [
 ];
 
 const Navbar = () => {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseOver = () => {
+    setHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setHovered(false);
+  };
+
   return (
-    <aside className="sidebar">
-      <ul className="sidebar-menu">
-        {menuItems.map((item, index) => (
-          <li key={index} className="sidebar-item">
-            <span className="icon">{item.icon}</span>
-            <span className="label">{item.label}</span>
-          </li>
-        ))}
-      </ul>
+    <aside className={`sidebar ${hovered ? "sidebar-hovered" : ""}`}>
+      <div
+        className="navbar-container"
+        onMouseEnter={handleMouseOver}
+        onMouseLeave={handleMouseOut}
+      >
+        <ul className="sidebar-menu">
+          {menuItems.map((item, index) => (
+            <li key={index} className="sidebar-item">
+              <span className="icon">{item.icon}</span>
+              <span className="label">{item.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </aside>
   );
 };
+
 
 export default Navbar;

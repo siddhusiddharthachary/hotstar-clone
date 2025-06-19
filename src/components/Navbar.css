@@ -1,46 +1,67 @@
-body{
-    background-color: rgb(15,16,20);
-    --tw-ring-color: rgba(59, 130, 246, .5);
-    color: #ffffff;
+body {
+  background-color: #024dfa;
+  color: #ffffff;
+}
+
+.gradient-text {
+  background: url('/public/images/favicon.ico');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sidebar {
   position: fixed;
   top: 0;
-  margin-left: 0;
-  margin-top: 5rem;
-  height: 80vh;
+  left: 0;
+  height: 100vh;
   width: 60px;
-  background: linear-gradient(to right, rgba(15,16,20, 1), rgba(15,16,20, 0.1));
-  color: white;
+  background-color: rgb(15, 16, 20);
+  transition: all 0.3s ease;
   overflow: hidden;
-  transition: width 0.3s ease;
   z-index: 1000;
+
+  /* Flex to center contents vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.sidebar:hover {
+.sidebar-hovered {
+  background: linear-gradient(to right, rgba(15, 16, 20, 1), rgba(15, 16, 20, 0.001));
   width: 200px;
+}
+
+/* No height needed here now */
+.navbar-container {
+  width: 100%;
 }
 
 .sidebar-menu {
   list-style: none;
-  padding: 2rem 0;
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.0rem;
+  gap: 1rem;
+  align-items: stretch;
 }
+
 
 .sidebar-item {
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;
-  transition: background 0.2s ease;
   cursor: pointer;
 }
 
 .sidebar-item:hover {
-    background-color: rgb(15,16,20);
+    font-weight: 500;
+    font-size: larger;
+  background: linear-gradient(to right,#1284fa, #a023f9, #e80791);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon {
@@ -57,6 +78,6 @@ body{
   transition: opacity 0.3s ease;
 }
 
-.sidebar:hover .label {
+.sidebar-hovered .label {
   opacity: 1;
 }
