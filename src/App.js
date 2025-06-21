@@ -1,16 +1,23 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import FeaturedSection from "./components/FeaturedSection";
+import MoviePreviewCard from "./components/MoviePreviewCard";
 
 function App() {
   return (
     <div style={{ display: "flex" }}>
+      {/* Left sidebar */}
       <Navbar />
-      <main style={{ marginLeft: "60px", padding: "2rem", flex: 1 }}>
-        <h2>Welcome to the Hotstar UI Clone</h2>
+        
+
+      {/* Main content */}
+      <main style={{ marginLeft: "60px", flex: 1 }}>
+        {/* Featured Video Card */}
+        <MoviePreviewCard />
+        <FeaturedSection />
+
+        {/* Movie Card (like Mistry card you mentioned) */}
       </main>
-    {/* <div className="gradient-text">
-       New man
-       </div> */}
     </div>
   );
 }

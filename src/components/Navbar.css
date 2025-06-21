@@ -1,5 +1,5 @@
 body {
-  background-color: #024dfa;
+  background-color: rgb(15, 16, 20);
   color: #ffffff;
 }
 
@@ -29,11 +29,10 @@ body {
 }
 
 .sidebar-hovered {
-  background: linear-gradient(to right, rgba(15, 16, 20, 1), rgba(15, 16, 20, 0.001));
+  background: linear-gradient(to right, rgba(15, 16, 20, 1), rgba(15, 16, 20, 0.085));
   width: 200px;
 }
 
-/* No height needed here now */
 .navbar-container {
   width: 100%;
 }
@@ -54,14 +53,20 @@ body {
   align-items: center;
   padding: 0.8rem 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar-item:hover{
+    transform: scale(1.05);
 }
 
-.sidebar-item:hover {
-    font-weight: 500;
-    font-size: larger;
-  background: linear-gradient(to right,#1284fa, #a023f9, #e80791);
+
+.sidebar-item:hover .label{
+   background: linear-gradient(to right, #1284fa, #a023f9, #e80791);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 1.2rem; /* ⬅️ Increase font size */
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .icon {

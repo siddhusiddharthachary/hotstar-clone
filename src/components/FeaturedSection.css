@@ -1,0 +1,175 @@
+.featured-container {
+  width: 100%;
+  background-color: rgb(15, 16, 20);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-bg {
+  background-image: url('/public/images/eng-vs-ind.avif'); /* Replace with your image */
+  /* margin-left: 750px; */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 95vw;
+  position: relative;
+}
+
+.featured-overlay {
+  background: linear-gradient(to right, rgba(15, 16, 20, 0.9), rgba(15, 16, 20, 0.3));
+  color: white;
+  padding: 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.featured-title span {
+  color: #facc15;
+}
+
+.featured-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.featured-info {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.live-dot {
+  color: red;
+  font-size: 1.1rem;
+}
+
+.featured-desc {
+  max-width: 600px;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.watch-now-btn {
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #1284fa, #a023f9, #e80791);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 350px;
+  height: 50px;
+}
+
+.watch-now-btn:hover {
+  transform: scale(1.025);
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* + button style */
+.watchlist-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.watchlist-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tooltip */
+.watchlist-container {
+  position: relative;
+  display: inline-block;
+}
+
+.watchlist-tooltip {
+  visibility: hidden;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.watchlist-container:hover .watchlist-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* Carousel */
+.thumbnail-carousel {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 1rem;
+}
+
+.thumbnail-img {
+  width: 140px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-img:hover {
+  transform: scale(1.1);
+}
+
+.carousel-arrow {
+  position: absolute;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
