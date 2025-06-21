@@ -1,0 +1,16 @@
+.scrollable-section {
+  margin: 2rem;
+  color: white;
+}
+
+.cards-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
