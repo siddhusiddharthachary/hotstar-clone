@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import FeaturedSection from "./components/FeaturedSection";
 import MoviePreviewCard from "./components/MoviePreviewCard";
-import ScrollableSection from "./components/ScrollableSection";
-import Scroll2 from "./components/Scroll2"; // ✅ Ensure this file exists and is capitalized
+import "./App.css";
 
-// Dummy cards for demonstration
+// Dummy card data for multiple sections
 const dummyCards = [
   { title: "Movie 1", image: "/images/lr1.avif" },
   { title: "Movie 2", image: "/images/lr2.avif" },
@@ -89,27 +88,169 @@ const cv = [
 ];
 
 function App() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex2, setHoveredIndex2] = useState(null);
+  const [hoveredIndex3, setHoveredIndex3] = useState(null);
+  const [hoveredIndex4, setHoveredIndex4] = useState(null);
+  const [hoveredIndex5, setHoveredIndex5] = useState(null);
+  const [hoveredIndex6, setHoveredIndex6] = useState(null);
+  // You can add more state variables for other sections if needed
+
   return (
     <div style={{ display: "flex" }}>
-      {/* Left Sidebar */}
       <Navbar />
-
-      {/* Main Content */}
       <main style={{ marginLeft: "60px", flex: 1 }}>
-        {/* Top Movie Preview Card */}
         <MoviePreviewCard />
-
-        {/* Featured Section (like ENG vs IND) */}
         <FeaturedSection />
 
-        {/* Scrollable Sections for categories */}
-        <ScrollableSection title="Latest Releases" cards={dummyCards} />
-        <Scroll2 title="Non-Stop Sports" cards={nsCards} />
-        <ScrollableSection title="Top Rated on IMDb" cards={tsCards} />
-        <ScrollableSection title="Star Maa Shows" cards={sms} />
-        <ScrollableSection title="Peacock's Finest" cards={pf} />
-        <ScrollableSection title="Popular Movies" cards={pm} />
-        <ScrollableSection title="Crime Vault" cards={cv} />
+        {/* SECTION 1: Latest Releases */}
+        <section className="scroll-section">
+          <h2 className="section-title">Latest Releases</h2>
+          <div className="scroll-container">
+            {dummyCards.map((card, index) => (
+              <div
+                key={index}
+                className={`scroll-card ${hoveredIndex === index ? "hovered" : ""}`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <img src={card.image} alt={card.title} />
+                {hoveredIndex === index && (
+                  <div className="hover-content">
+                    <button className="watch-now">▶ Watch Now</button>
+                    <button className="add-to-list">＋</button>
+                    <p className="card-meta">2025 • U/A 13+ • Hindi</p>
+                    <p className="card-desc">Thrilling new drama with unexpected twists!</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION 2: Top Rated on IMDb */}
+        <section className="scroll-section">
+          <h2 className="section-title">Non-stop Sports</h2>
+          <div className="scroll-container">
+            {nsCards.map((card, index) => (
+              <div
+                key={index}
+                className={`scroll-card ${hoveredIndex2 === index ? "hovered" : ""}`}
+                onMouseEnter={() => setHoveredIndex2(index)}
+                onMouseLeave={() => setHoveredIndex2(null)}
+              >
+                <img src={card.image} alt={card.title} />
+                {hoveredIndex2 === index && (
+                  <div className="hover-content">
+                    <button className="watch-now">▶ Watch Now</button>
+                    <button className="add-to-list">＋</button>
+                    <p className="card-meta">2025 • U/A 16+ • Thriller</p>
+                    <p className="card-desc">A critically acclaimed story that grips hard!</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+        
+        
+        <section className="scroll-section">
+          <h2 className="section-title">Top Rated on IMDb</h2>
+          <div className="scroll-container">
+            {tsCards.map((card, index) => (
+              <div
+                key={index}
+                className={`scroll-card ${hoveredIndex3 === index ? "hovered" : ""}`}
+                onMouseEnter={() => setHoveredIndex3(index)}
+                onMouseLeave={() => setHoveredIndex3(null)}
+              >
+                <img src={card.image} alt={card.title} />
+                {hoveredIndex3 === index && (
+                  <div className="hover-content">
+                    <button className="watch-now">▶ Watch Now</button>
+                    <button className="add-to-list">＋</button>
+                    <p className="card-meta">2025 • U/A 16+ • Thriller</p>
+                    <p className="card-desc">A critically acclaimed story that grips hard!</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="scroll-section">
+          <h2 className="section-title">Star Maa Shows</h2>
+          <div className="scroll-container">
+            {sms.map((card, index) => (
+              <div
+                key={index}
+                className={`scroll-card ${hoveredIndex4 === index ? "hovered" : ""}`}
+                onMouseEnter={() => setHoveredIndex4(index)}
+                onMouseLeave={() => setHoveredIndex4(null)}
+              >
+                <img src={card.image} alt={card.title} />
+                {hoveredIndex4 === index && (
+                  <div className="hover-content">
+                    <button className="watch-now">▶ Watch Now</button>
+                    <button className="add-to-list">＋</button>
+                    <p className="card-meta">2025 • U/A 16+ • Thriller</p>
+                    <p className="card-desc">A critically acclaimed story that grips hard!</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="scroll-section">
+          <h2 className="section-title">Peacock's Finest</h2>
+          <div className="scroll-container">
+            {pf.map((card, index) => (
+              <div
+                key={index}
+                className={`scroll-card ${hoveredIndex5 === index ? "hovered" : ""}`}
+                onMouseEnter={() => setHoveredIndex5(index)}
+                onMouseLeave={() => setHoveredIndex5(null)}
+              >
+                <img src={card.image} alt={card.title} />
+                {hoveredIndex5 === index && (
+                  <div className="hover-content">
+                    <button className="watch-now">▶ Watch Now</button>
+                    <button className="add-to-list">＋</button>
+                    <p className="card-meta">2025 • U/A 16+ • Thriller</p>
+                    <p className="card-desc">A critically acclaimed story that grips hard!</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="scroll-section">
+          <h2 className="section-title">Popular Movies</h2>
+          <div className="scroll-container">
+            {pm.map((card, index) => (
+              <div
+                key={index}
+                className={`scroll-card ${hoveredIndex6 === index ? "hovered" : ""}`}
+                onMouseEnter={() => setHoveredIndex6(index)}
+                onMouseLeave={() => setHoveredIndex6(null)}
+              >
+                <img src={card.image} alt={card.title} />
+                {hoveredIndex6 === index && (
+                  <div className="hover-content">
+                    <button className="watch-now">▶ Watch Now</button>
+                    <button className="add-to-list">＋</button>
+                    <p className="card-meta">2025 • U/A 16+ • Thriller</p>
+                    <p className="card-desc">A critically acclaimed story that grips hard!</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+
       </main>
     </div>
   );
